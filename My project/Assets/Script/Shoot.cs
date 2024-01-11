@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
 {
     private static readonly System.Random random = new System.Random();
     private System.Random rnd = random;
-    public RectTransform rectTransform;
+    public Transform rectTransform;
     private int resX;
     private int resY;
     private float resZ;
@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
     }
     public void Attack()
     {
-        if (UnityEngine.Input.GetMouseButtonDown(0) && Bullet.NbBullet != 0)
+        if (UnityEngine.Input.GetMouseButtonDown(0) && Bullet.NbBullet != 0 && !GamePaused.gameIsPaused)
         {
             Bullet.NbBullet -= 1;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit))
@@ -29,7 +29,7 @@ public class Shoot : MonoBehaviour
                 {
                     if (timer == 0)
                     {
-                        rectTransform = CHit.GetComponent<RectTransform>();
+                        rectTransform = CHit.GetComponent<Transform>();
                         resX = rnd.Next(-7, 12);
                         resY = rnd.Next(2, 10);
                         resZ = rectTransform.position.z;
@@ -37,6 +37,16 @@ public class Shoot : MonoBehaviour
                         //timer += 1;
                         Score.score += 1;
                     }
+                }
+                if (CHit.CompareTag("William"))
+                {
+                    Destroy(CHit);
+                    Bullet.NbBullet += 11;
+                }
+                if (CHit.CompareTag("CibleWin"))
+                {
+                    Destroy(CHit);
+                    VictoryDefeat.Win = true;
                 }
             }
         }

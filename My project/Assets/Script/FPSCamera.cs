@@ -15,6 +15,7 @@ public class FPSCamera : MonoBehaviour
 
     void Update()
     {
+        if (GamePaused.gameIsPaused) return;
         y = Input.GetAxis("Mouse X");
         x = Input.GetAxis("Mouse Y");
         rotate = new Vector3(x, y * sensitivity, 0);
