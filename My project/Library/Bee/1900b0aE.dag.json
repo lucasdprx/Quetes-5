@@ -7,6 +7,7 @@
       "Outputs": [],
       "ToBuildDependencies": [
         1,
+<<<<<<< Updated upstream
         2,
         3,
         4,
@@ -351,11 +352,15 @@
         343,
         344,
         345
+=======
+        2
+>>>>>>> Stashed changes
       ],
       "OverwriteOutputs": false,
       "DebugActionIndex": 0
     },
     {
+<<<<<<< Updated upstream
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt",
       "DisplayName": "Writing UnityEngine.TestRunner.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
@@ -768,10 +773,13 @@
       "DebugActionIndex": 5
     },
     {
+=======
+>>>>>>> Stashed changes
       "Annotation": "ScriptAssemblies",
       "DisplayName": null,
       "Inputs": [],
       "Outputs": [],
+<<<<<<< Updated upstream
       "ToBuildDependencies": [
         5,
         7,
@@ -20904,6 +20912,10 @@
       "AllowUnexpectedOutput": true,
       "Env": [],
       "DebugActionIndex": 344
+=======
+      "OverwriteOutputs": false,
+      "DebugActionIndex": 1
+>>>>>>> Stashed changes
     },
     {
       "Annotation": "ScriptAssembliesAndTypeDB",
@@ -20911,11 +20923,18 @@
       "Inputs": [],
       "Outputs": [],
       "ToBuildDependencies": [
+<<<<<<< Updated upstream
         6,
         344
       ],
       "OverwriteOutputs": false,
       "DebugActionIndex": 345
+=======
+        1
+      ],
+      "OverwriteOutputs": false,
+      "DebugActionIndex": 2
+>>>>>>> Stashed changes
     }
   ],
   "FileSignatures": [
@@ -21034,6 +21053,7 @@
     },
     {
       "File": "Library/Bee/1900b0aE-inputdata.json"
+<<<<<<< Updated upstream
     },
     {
       "File": "Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/csc.rsp"
@@ -21124,6 +21144,8 @@
     },
     {
       "File": "Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.State/csc.rsp"
+=======
+>>>>>>> Stashed changes
     }
   ],
   "GlobSignatures": [
@@ -21149,8 +21171,13 @@
   "EmitDataForBeeWhy": 0,
         "NamedNodes": {
           "all_tundra_nodes": 0,
+<<<<<<< Updated upstream
           "ScriptAssemblies": 6,
           "ScriptAssembliesAndTypeDB": 345
+=======
+          "ScriptAssemblies": 1,
+          "ScriptAssembliesAndTypeDB": 2
+>>>>>>> Stashed changes
         }
 ,  "DefaultNodes": [
     0

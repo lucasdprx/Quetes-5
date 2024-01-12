@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {"msg":"init","dagFile":"Library/Bee/Player47d0d077.dag","targets":["Player"]}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"Player","enqueuedNodeIndex":142}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles SpeedShoot/Build_SpeedShoot/SpeedShoot_Data/globalgamemanagers","enqueuedNodeIndex":1,"enqueueingNodeAnnotation":"Player","enqueueingNodeIndex":142}
@@ -564,3 +565,9 @@
 {"msg":"newNode","annotation":"CopyFiles SpeedShoot/Build_SpeedShoot/SpeedShoot_Data/boot.config","index":18}
 {"msg":"runNodeAction","annotation":"CopyFiles SpeedShoot/Build_SpeedShoot/SpeedShoot_Data/boot.config","displayName":"Copying boot.config","index":18}
 {"msg":"noderesult","processed_node_count":140,"number_of_nodes_ever_queued":142,"annotation":"CopyFiles SpeedShoot/Build_SpeedShoot/SpeedShoot_Data/boot.config","index":18,"exitcode":0,"outputfile":"SpeedShoot\\Build_SpeedShoot\\SpeedShoot_Data\\boot.config"}
+=======
+{"msg":"init","dagFile":"Library/Bee/1900b0aE.dag","targets":["ScriptAssemblies"]}
+{"msg":"enqueueNode","enqueuedNodeAnnotation":"ScriptAssemblies","enqueuedNodeIndex":1}
+{"msg":"newNode","annotation":"ScriptAssemblies","index":1}
+{"msg":"runNodeAction","annotation":"ScriptAssemblies","index":1}
+>>>>>>> Stashed changes
