@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
-    public static int NbBullet = 45;
+    public static int NbBullet = 30;
     [SerializeField] private GameObject BulletText;
     public GameObject inf;
 

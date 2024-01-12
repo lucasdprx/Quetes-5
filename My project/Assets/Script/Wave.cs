@@ -36,31 +36,31 @@ public class Wave : MonoBehaviour
         }
         switch (Score.score)
         {
-            case 25: 
+            case 15: 
                 nbWave = 2;
-                if (Score.scoreMax == 50)
+                if (Score.scoreMax == 30)
                     return;
-                Bullet.NbBullet = 45;
-                Score.scoreMax = 50; break;
-            case 50:
+                Bullet.NbBullet = 30;
+                Score.scoreMax = 30; break;
+            case 30:
                 nbWave = 3;
+                if (Score.scoreMax == 45)
+                    return;
+                Bullet.NbBullet = 30;
+                Score.scoreMax = 45; break;
+            case 45:
+                nbWave = 4;
+                if (Score.scoreMax == 60)
+                    return;
+                Bullet.NbBullet = 30;
+                Score.scoreMax = 60; break;
+            case 60: 
+                nbWave = 5;
                 if (Score.scoreMax == 75)
                     return;
-                Bullet.NbBullet = 45;
+                Bullet.NbBullet = 25;
                 Score.scoreMax = 75; break;
             case 75:
-                nbWave = 4;
-                if (Score.scoreMax == 100)
-                    return;
-                Bullet.NbBullet = 40;
-                Score.scoreMax = 100; break;
-            case 100: 
-                nbWave = 5;
-                if (Score.scoreMax == 125)
-                    return;
-                Bullet.NbBullet = 35;
-                Score.scoreMax = 125; break;
-            case 125:
                 nbWave = 6; break;
         }
 

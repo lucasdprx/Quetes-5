@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.Windows;
 
 public class Shoot : MonoBehaviour
@@ -11,16 +13,38 @@ public class Shoot : MonoBehaviour
     private int resX;
     private int resY;
     private float resZ;
+    public GameObject Laser;
+    public GameObject LaserPosition;
     public new Camera camera;
+    public int timer = 0;
+
+    public void Start()
+    {
+        LaserPosition.transform.position = Laser.transform.position;
+    }
+
     public void Update()
     {
         Attack();
+        if (timer > 0)
+        {
+            timer++;
+            Laser.transform.position += camera.transform.forward * Time.deltaTime  * 25; 
+            if (timer > 20)
+            {
+                timer = 0;
+                Laser.SetActive(false);
+                Laser.transform.position = LaserPosition.transform.position;
+            }
+        }
     }
     public void Attack()
     {
         if (UnityEngine.Input.GetMouseButtonDown(0) && Bullet.NbBullet != 0 && !GamePaused.gameIsPaused && !VictoryDefeat.Win)
         {
             Bullet.NbBullet -= 1;
+            timer++;
+            Laser.SetActive(true);
             AudioManager.instance.PlaySong("Shoot");
             if (Physics.Raycast(camera.transform.position, camera.transform.forward, out var hit, float.PositiveInfinity, ~(1<<LayerMask.NameToLayer("wall") | 1<<LayerMask.NameToLayer("Player"))))
             {
@@ -43,7 +67,6 @@ public class Shoot : MonoBehaviour
                 if (CHit.CompareTag("CibleWin"))
                 {
                     Destroy(CHit);
-                    AudioManager.instance.PlaySong("Win");
                     VictoryDefeat.Win = true;
                 }
             }

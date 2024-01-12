@@ -10,7 +10,7 @@ public class GamePaused : MonoBehaviour
     public static bool gameIsPaused = false;
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!gameIsPaused)
             {
@@ -43,10 +43,10 @@ public class GamePaused : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1.0f;
         gameIsPaused = false;
-        Bullet.NbBullet = 45;
+        Bullet.NbBullet = 30;
         Wave.nbWave = 1;
         Timer.timer = 0;
-        Score.scoreMax = 25;
+        Score.scoreMax = 15;
         Score.score = 0;
         inf.SetActive(false);
         VictoryDefeat.Win = false;
@@ -57,11 +57,11 @@ public class GamePaused : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
         gameIsPaused = false;
-        Bullet.NbBullet = 45;
+        Bullet.NbBullet = 30;
         Score.score = 0;
         Wave.nbWave = 1;
         VictoryDefeat.Win = false;
-        Score.scoreMax = 25;
+        Score.scoreMax = 15;
         Timer.timer = 0;
         inf.SetActive(false);
     }

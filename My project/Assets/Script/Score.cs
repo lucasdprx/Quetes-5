@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public static int score;
-    public static int scoreMax = 25;
+    public static int scoreMax = 15;
     [SerializeField] private GameObject scoreText;
 
     void Update()
