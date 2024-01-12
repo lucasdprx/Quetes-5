@@ -10,15 +10,15 @@ public class MouvTarget : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.x > 12)
+        if (transform.position.x > 13)
         {
             Speed = -Speed;
-            transform.position = new Vector3(12,transform.position.y,transform.position.z);
+            transform.position = new Vector3(13,transform.position.y,transform.position.z);
         }
-        if (transform.position.x < -7)
+        if (transform.position.x < -5.5)
         {
             Speed = -Speed;
-            transform.position = new Vector3(-7, transform.position.y, transform.position.z);
+            transform.position = new Vector3((float)-5.5, transform.position.y, transform.position.z);
         }
         if (transform.position.y > 10)
         {

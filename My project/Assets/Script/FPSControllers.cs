@@ -10,6 +10,8 @@ public class FPSController : MonoBehaviour
     public float jumpPower = 7f;
     public float gravity = 10f;
 
+    public int SoundPathIndex = 0;
+
 
     Vector3 moveDirection = Vector3.zero;
     public bool canMove = true;
@@ -59,8 +61,7 @@ public class FPSController : MonoBehaviour
 
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
-
-
+        
         #endregion
     }
 }

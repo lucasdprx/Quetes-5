@@ -18,6 +18,7 @@ public class GamePaused : MonoBehaviour
                 gameIsPaused = true;
                 MenuPause.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
 
 
@@ -34,6 +35,7 @@ public class GamePaused : MonoBehaviour
         Time.timeScale = 1.0f;
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void ReturnMenu()
@@ -41,6 +43,13 @@ public class GamePaused : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1.0f;
         gameIsPaused = false;
+        Bullet.NbBullet = 45;
+        Wave.nbWave = 1;
+        Timer.timer = 0;
+        Score.scoreMax = 25;
+        Score.score = 0;
+        inf.SetActive(false);
+        VictoryDefeat.Win = false;
     }
 
     public void Restart()

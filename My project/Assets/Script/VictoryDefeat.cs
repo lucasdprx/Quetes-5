@@ -17,17 +17,21 @@ public class VictoryDefeat : MonoBehaviour
         if (Win)
         {
             UiVD.SetActive(true);
+            Time.timeScale = 0.0f;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             TextTimer.GetComponent<Text>().text = "Temps Final : " + Timer.timer.ToString("0.00");
             return;
         }
         if (Bullet.NbBullet == 0)
         {
             Win = false;
-            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0.0f;
+            TextTimer.GetComponent<Text>().text = "Tu n'as plus de munitions";
             UiVD.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             return;
         }
-        UiVD.SetActive(false);
     }
 }

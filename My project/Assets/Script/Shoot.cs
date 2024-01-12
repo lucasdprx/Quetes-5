@@ -11,7 +11,6 @@ public class Shoot : MonoBehaviour
     private int resX;
     private int resY;
     private float resZ;
-    private int timer;
     public new Camera camera;
     public void Update()
     {
@@ -19,44 +18,35 @@ public class Shoot : MonoBehaviour
     }
     public void Attack()
     {
-        if (UnityEngine.Input.GetMouseButtonDown(0) && Bullet.NbBullet != 0 && !GamePaused.gameIsPaused)
+        if (UnityEngine.Input.GetMouseButtonDown(0) && Bullet.NbBullet != 0 && !GamePaused.gameIsPaused && !VictoryDefeat.Win)
         {
             Bullet.NbBullet -= 1;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit))
+            AudioManager.instance.PlaySong("Shoot");
+            if (Physics.Raycast(camera.transform.position, camera.transform.forward, out var hit, float.PositiveInfinity, ~(1<<LayerMask.NameToLayer("wall") | 1<<LayerMask.NameToLayer("Player"))))
             {
                 GameObject CHit = hit.collider.gameObject;
                 if (CHit.CompareTag("Cible"))
                 {
-                    if (timer == 0)
-                    {
-                        rectTransform = CHit.GetComponent<Transform>();
-                        resX = rnd.Next(-7, 12);
-                        resY = rnd.Next(2, 10);
-                        resZ = rectTransform.position.z;
-                        rectTransform.position = new Vector3(resX, resY, resZ);
-                        //timer += 1;
-                        Score.score += 1;
-                    }
+                    rectTransform = CHit.GetComponent<Transform>();
+                    resX = rnd.Next((int)-5.5, 13);
+                    resY = rnd.Next(2, 10);
+                    resZ = rectTransform.position.z;
+                    rectTransform.position = new Vector3(resX, resY, resZ);
+                    Score.score += 1;
                 }
                 if (CHit.CompareTag("William"))
                 {
                     Destroy(CHit);
                     Bullet.NbBullet += 11;
+                    AudioManager.instance.PlaySong("William");
                 }
                 if (CHit.CompareTag("CibleWin"))
                 {
                     Destroy(CHit);
+                    AudioManager.instance.PlaySong("Win");
                     VictoryDefeat.Win = true;
                 }
             }
-        }
-        if (timer != 0)
-        {
-            timer += 1;
-        }
-        if (timer == 20)
-        {
-            timer = 0;
         }
     }
 }
